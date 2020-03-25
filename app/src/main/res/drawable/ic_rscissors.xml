@@ -1,4 +1,5 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rscissors_image"
     android:width="114dp"
     android:height="155dp"
     android:viewportWidth="114"
