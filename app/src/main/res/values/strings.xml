@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Rock Papers Scissors</string>
+    <string name="rock">Rock</string>
+    <string name="you">You</string>
+    <string name="paper">Paper</string>
+    <string name="scissors">Scissors</string>
+    <string name="your_score_0_computer_score_0">Your Score 0 Computer Score 0</string>
+    <string name="choose_one">Choose One</string>
+    <string name="computer">Computer</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO2</string>
+</resources>
