@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.734" />
 
     <Button
         android:id="@+id/button_rock"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.789" />
 
     <LinearLayout
         android:id="@+id/linearGroup"
@@ -98,8 +98,7 @@
             android:id="@+id/imageComp"
             android:layout_width="163dp"
             android:layout_height="136dp"
-            android:contentDescription="@string/computer"
-            app:srcCompat="@drawable/iconrock" />
+            android:contentDescription="@string/computer" />
 
         <TextView
             android:id="@+id/textView_yourChoice"
@@ -113,7 +112,7 @@
             android:id="@+id/imageYou"
             android:layout_width="169dp"
             android:layout_height="170dp"
-            app:srcCompat="@drawable/iconsscissors" />
+            android:contentDescription="@string/todo" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

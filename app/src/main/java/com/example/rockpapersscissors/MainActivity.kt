@@ -7,9 +7,10 @@ import android.widget.Button
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity(val rockpapersscissors: ImageView) : AppCompatActivity() {
+class MainActivity: AppCompatActivity() {
 
     lateinit var imageYou: ImageView
+    lateinit var imageComp: ImageView
     lateinit var rpsPaperButton: Button
     lateinit var rpsRockButton: Button
     lateinit var rpsScissorsButton: Button
@@ -34,17 +35,21 @@ class MainActivity(val rockpapersscissors: ImageView) : AppCompatActivity() {
     }
 
 
-    fun yourSelection(v: View) =
+    fun yourSelection(v: View) {
 
         if (v.id.toString() == rpsRockButton.id.toString()) {
+            imageYou.setImageResource(R.drawable.ic_rrock)
 
         } else if (v.id.toString() == rpsPaperButton.id.toString()) {
+            imageYou.setImageResource(R.drawable.ic_rpaper)
 
         } else {
+            imageYou.setImageResource(R.drawable.ic_rscissors)
 
 
         }
-
+        rollRPS()
+    }
 
     fun startGame() {
 
@@ -66,7 +71,7 @@ class MainActivity(val rockpapersscissors: ImageView) : AppCompatActivity() {
             else -> R.drawable.ic_rscissors
         }
 
-        imageYou.setImageResource(drawableResource)
+        imageComp.setImageResource(drawableResource)
 
     }
 
