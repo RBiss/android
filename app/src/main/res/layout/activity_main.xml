@@ -95,9 +95,9 @@
             android:textSize="24sp" />
 
         <ImageView
-            android:id="@+id/imageComp"
+            android:id="@+id/imageComputer"
             android:layout_width="163dp"
-            android:layout_height="136dp"
+            android:layout_height="173dp"
             android:contentDescription="@string/computer" />
 
         <TextView
@@ -111,7 +111,7 @@
         <ImageView
             android:id="@+id/imageYou"
             android:layout_width="169dp"
-            android:layout_height="170dp"
+            android:layout_height="173dp"
             android:contentDescription="@string/todo" />
     </LinearLayout>
 

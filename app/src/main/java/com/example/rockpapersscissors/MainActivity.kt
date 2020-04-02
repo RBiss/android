@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import com.example.rockpapersscissors.R.id.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity: AppCompatActivity() {
@@ -25,7 +26,7 @@ class MainActivity: AppCompatActivity() {
         rpsRockButton = findViewById(R.id.button_rock)
         rpsRockButton.setOnClickListener { yourSelection(rpsRockButton) }
 
-        rpsPaperButton = findViewById(R.id.paper_image)
+        rpsPaperButton = findViewById(R.id.button_paper)
         rpsPaperButton.setOnClickListener { yourSelection(rpsPaperButton) }
 
         rpsScissorsButton = findViewById(R.id.button_scissors)
@@ -38,7 +39,7 @@ class MainActivity: AppCompatActivity() {
     fun yourSelection(v: View) {
 
         if (v.id.toString() == rpsRockButton.id.toString()) {
-            imageYou.setImageResource(R.drawable.ic_rrock)
+            imageYou.setImageResource(R.drawable.ic_rpsrock)
 
         } else if (v.id.toString() == rpsPaperButton.id.toString()) {
             imageYou.setImageResource(R.drawable.ic_rpaper)
@@ -62,10 +63,11 @@ class MainActivity: AppCompatActivity() {
     private fun rollRPS() {
         // Toast.makeText(this, "button clicked",
         //  Toast.LENGTH_SHORT).show()
+        imageComp = findViewById(R.id.imageComputer)
         val randomInt = (1..3).random()
 
         val drawableResource = when (randomInt) {
-            1 -> R.drawable.ic_rrock
+            1 -> R.drawable.ic_rpsrock
             2 -> R.drawable.ic_rpaper
 
             else -> R.drawable.ic_rscissors
