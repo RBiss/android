@@ -16,8 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
+        app:layout_constraintTop_toBottomOf="@+id/linearGroup"
+        app:layout_constraintVertical_bias="0.492" />
 
     <Button
         android:id="@+id/button_rock"
@@ -62,7 +62,6 @@
         app:layout_constraintVertical_bias="0.92" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choose_one"
@@ -70,41 +69,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.71" />
 
     <LinearLayout
         android:id="@+id/linearGroup"
         android:layout_width="174dp"
         android:layout_height="396dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginLeft="118dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginRight="119dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView_computerChoice"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_yourChoice"
+            android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="@string/computer"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/you"
             android:textColor="#E91E63"
             android:textSize="24sp" />
 
         <ImageView
-            android:id="@+id/imageComputer"
+            android:id="@+id/imageComp"
             android:layout_width="163dp"
             android:layout_height="173dp"
-            android:contentDescription="@string/computer" />
+            android:contentDescription="@string/you" />
 
         <TextView
-            android:id="@+id/textView_yourChoice"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_computerChoice"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/you"
+            android:gravity="center"
+            android:text="@string/computer"
             android:textColor="#2196F3"
             android:textSize="24sp" />
 
