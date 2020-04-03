@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 
 class MainActivity: AppCompatActivity() {
@@ -28,6 +27,7 @@ class MainActivity: AppCompatActivity() {
     lateinit var youScore: TextView
     var gamesPlayed: Int = 0
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,6 +42,9 @@ class MainActivity: AppCompatActivity() {
 
         rpsScissorsButton = findViewById(R.id.button_scissors)
         rpsScissorsButton.setOnClickListener { yourSelection(rpsScissorsButton) }
+
+        buttonReset.setOnClickListener { resetScore(buttonReset) }
+
 
         imageYou = findViewById(R.id.imageComp)
 
@@ -70,12 +73,15 @@ class MainActivity: AppCompatActivity() {
       //  gameScore.setText( "Score: You  "+ you_score + " Computer " + comp_score +"")  ;
     }
 
-    fun resetScore() {
+    fun resetScore(buttonReset: Button) {
 
         yourScore = 0
         compScore = 0
         tieScore = 0
         gamesPlayed = 0
+
+             gameStart()
+    
     }
 
     fun resultGame() {
@@ -92,7 +98,7 @@ class MainActivity: AppCompatActivity() {
             gamesPlayed++
         } else if (playerSelect == button_rock && randomInt == 3) {
            imageViewResult.setImageResource(R.drawable.ic_check)
-            
+
              yourScore++
             gamesPlayed++
         } else if (playerSelect == button_paper && randomInt == 1) {
@@ -120,8 +126,14 @@ class MainActivity: AppCompatActivity() {
                          tieScore++
             gamesPlayed++
         }
-        println("You $yourScore Computer $compScore Ties $tieScore Games Played $gamesPlayed")
+       
+              gameStart()
 
+    }
+
+    fun gameStart() {
+
+        println("Scores: You $yourScore  Computer $compScore Ties $tieScore Games Played $gamesPlayed")
     }
 
     //private fun scorecard(){
