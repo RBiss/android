@@ -22,10 +22,11 @@ class MainActivity: AppCompatActivity() {
     lateinit var playerSelect: TextView
     var randomInt: Int = 0
     lateinit var gameResult: ImageView
-    var your_score: Int = 0
-    var comp_score: Int = 0
+    var yourScore: Int = 0
+    var compScore: Int = 0
+    var tieScore: Int = 0
     lateinit var youScore: TextView
-
+    var gamesPlayed: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,38 +70,57 @@ class MainActivity: AppCompatActivity() {
       //  gameScore.setText( "Score: You  "+ you_score + " Computer " + comp_score +"")  ;
     }
 
+    fun resetScore() {
+
+        yourScore = 0
+        compScore = 0
+        tieScore = 0
+        gamesPlayed = 0
+    }
+
     fun resultGame() {
 
 
 
         if (playerSelect == button_rock && randomInt == 1) {
             imageViewResult.setImageResource(R.drawable.ic_equal)
+             tieScore++
+            gamesPlayed++
         } else if (playerSelect == button_rock && randomInt == 2) {
            imageViewResult.setImageResource(R.drawable.ic_lose)
-             comp_score++
+             compScore++
+            gamesPlayed++
         } else if (playerSelect == button_rock && randomInt == 3) {
            imageViewResult.setImageResource(R.drawable.ic_check)
             
-             your_score++
+             yourScore++
+            gamesPlayed++
         } else if (playerSelect == button_paper && randomInt == 1) {
            imageViewResult.setImageResource(R.drawable.ic_check)
-             your_score++
+             yourScore++
+            gamesPlayed++
         } else if (playerSelect == button_paper && randomInt == 2) {
             imageViewResult.setImageResource(R.drawable.ic_equal)
+            tieScore++
+            gamesPlayed++
         } else if (playerSelect == button_paper && randomInt == 3) {
            imageViewResult.setImageResource(R.drawable.ic_lose)
-                comp_score++
+                compScore++
+            gamesPlayed++
         } else if (playerSelect == button_scissors && randomInt == 1) {
            imageViewResult.setImageResource(R.drawable.ic_lose)
-                comp_score++
+                compScore++
+            gamesPlayed++
         } else if (playerSelect == button_scissors && randomInt == 2) {
            imageViewResult.setImageResource(R.drawable.ic_check)
-             your_score++
+             yourScore++
+            gamesPlayed++
         } else {
            imageViewResult.setImageResource(R.drawable.ic_equal)
-
+                         tieScore++
+            gamesPlayed++
         }
-        println("You $your_score Computer $comp_score")
+        println("You $yourScore Computer $compScore Ties $tieScore Games Played $gamesPlayed")
 
     }
 
