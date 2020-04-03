@@ -70,7 +70,7 @@ class MainActivity: AppCompatActivity() {
         resultGame()
 
        
-      //  gameScore.setText( "Score: You  "+ you_score + " Computer " + comp_score +"")  ;
+     
     }
 
     fun resetScore(buttonReset: Button) {
