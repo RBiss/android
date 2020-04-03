@@ -7,8 +7,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+
 
 class MainActivity: AppCompatActivity() {
+
+
 
     lateinit var imageYou: ImageView
     lateinit var imageComp: ImageView
@@ -17,6 +21,10 @@ class MainActivity: AppCompatActivity() {
     lateinit var rpsScissorsButton: Button
     lateinit var playerSelect: TextView
     var randomInt: Int = 0
+    lateinit var gameResult: ImageView
+    var your_score: Int = 0
+    var comp_score: Int = 0
+    lateinit var youScore: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,33 +63,50 @@ class MainActivity: AppCompatActivity() {
 
         }
         rollRPS()
-        startGame()
+        resultGame()
+
+       
+      //  gameScore.setText( "Score: You  "+ you_score + " Computer " + comp_score +"")  ;
     }
 
-    fun startGame() {
+    fun resultGame() {
+
+
+
         if (playerSelect == button_rock && randomInt == 1) {
-            println("Draw")
+            imageViewResult.setImageResource(R.drawable.ic_equal)
         } else if (playerSelect == button_rock && randomInt == 2) {
-            println("Loss")
+           imageViewResult.setImageResource(R.drawable.ic_lose)
+             comp_score++
         } else if (playerSelect == button_rock && randomInt == 3) {
-            println("Win")
+           imageViewResult.setImageResource(R.drawable.ic_check)
+            
+             your_score++
         } else if (playerSelect == button_paper && randomInt == 1) {
-            println("Win")
+           imageViewResult.setImageResource(R.drawable.ic_check)
+             your_score++
         } else if (playerSelect == button_paper && randomInt == 2) {
-            println("Draw")
+            imageViewResult.setImageResource(R.drawable.ic_equal)
         } else if (playerSelect == button_paper && randomInt == 3) {
-            println("Loss")
+           imageViewResult.setImageResource(R.drawable.ic_lose)
+                comp_score++
         } else if (playerSelect == button_scissors && randomInt == 1) {
-            println("Loss")
+           imageViewResult.setImageResource(R.drawable.ic_lose)
+                comp_score++
         } else if (playerSelect == button_scissors && randomInt == 2) {
-            println("Win")
+           imageViewResult.setImageResource(R.drawable.ic_check)
+             your_score++
         } else {
-            println("Draw")
+           imageViewResult.setImageResource(R.drawable.ic_equal)
 
         }
+        println("You $your_score Computer $comp_score")
 
     }
 
+    //private fun scorecard(){
+    //    gameScore.text = ("Score: You  "+ you_score + " Computer " + comp_score +"")
+   // }
     /**
      * Click listener for the Roll button.
      */
