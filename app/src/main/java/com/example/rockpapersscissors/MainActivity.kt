@@ -20,11 +20,9 @@ class MainActivity: AppCompatActivity() {
     lateinit var rpsScissorsButton: Button
     lateinit var playerSelect: TextView
     var randomInt: Int = 0
-    lateinit var gameResult: ImageView
     var yourScore: Int = 0
     var compScore: Int = 0
     var tieScore: Int = 0
-    lateinit var youScore: TextView
     var gamesPlayed: Int = 0
 
 
@@ -50,6 +48,7 @@ class MainActivity: AppCompatActivity() {
 
     }
 
+     // displays image based on player's button selection
 
     fun yourSelection(v: View) {
 
@@ -72,6 +71,7 @@ class MainActivity: AppCompatActivity() {
        
      
     }
+    // function resets variables to zero and redisplays the empty values by restarting gameStart()
 
     fun resetScore(buttonReset: Button) {
 
@@ -84,6 +84,9 @@ class MainActivity: AppCompatActivity() {
     
     }
 
+    // compares player selection vs computer random selection and distributes scores and runs the gameStart score function
+
+    
     fun resultGame() {
 
 
@@ -130,17 +133,14 @@ class MainActivity: AppCompatActivity() {
               gameStart()
 
     }
+         // displays the score in the TextView id scoreTextView
 
     fun gameStart() {
          scoreTextView.text = ("Scores - You: $yourScore  Computer: $compScore Ties: $tieScore #Games: $gamesPlayed")
     }
 
-    //private fun scorecard(){
-    //    gameScore.text = ("Score: You  "+ you_score + " Computer " + comp_score +"")
-   // }
-    /**
-     * Click listener for the Roll button.
-     */
+    // the computers selection
+
     private fun rollRPS() {
         // Toast.makeText(this, "button clicked",
         //  Toast.LENGTH_SHORT).show()
@@ -159,12 +159,13 @@ class MainActivity: AppCompatActivity() {
     }
 
 }
+              // generated to make types work together in gameStart
 
 private fun <T> TextView.findViewById(gameStart: Unit) {
 
 }
 
 
-// private operator fun ImageView.invoke(button: Any) {
 
-//}
+
+
