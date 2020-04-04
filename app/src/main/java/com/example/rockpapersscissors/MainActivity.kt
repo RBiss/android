@@ -24,6 +24,8 @@ class MainActivity: AppCompatActivity() {
     var compScore: Int = 0
     var tieScore: Int = 0
     var gamesPlayed: Int = 0
+    var scoreCardPlayer: Int = 0
+    var scoreCardComp: Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +43,7 @@ class MainActivity: AppCompatActivity() {
         rpsScissorsButton = findViewById(R.id.button_scissors)
         rpsScissorsButton.setOnClickListener { yourSelection(rpsScissorsButton) }
 
-        buttonReset.setOnClickListener { resetScore(buttonReset) }
+        buttonReset.setOnClickListener { resetScore() }
         scoreTextView.findViewById<View>(gameStart())
 
         imageYou = findViewById(R.id.imageComp)
@@ -73,12 +75,16 @@ class MainActivity: AppCompatActivity() {
     }
     // function resets variables to zero and redisplays the empty values by restarting gameStart()
 
-    fun resetScore(buttonReset: Button) {
+    fun resetScore() {
 
         yourScore = 0
         compScore = 0
         tieScore = 0
         gamesPlayed = 0
+        scoreCardComp = 0
+        scoreCardPlayer = 0
+
+
 
              gameStart()
     
@@ -131,12 +137,41 @@ class MainActivity: AppCompatActivity() {
         }
        
               gameStart()
+        winnerDeclare()
+
 
     }
          // displays the score in the TextView id scoreTextView
 
     fun gameStart() {
-         scoreTextView.text = ("Scores - You: $yourScore  Computer: $compScore Ties: $tieScore #Games: $gamesPlayed")
+
+
+                scoreTextView.text =
+                    ("You: $yourScore  Rival: $compScore Ties: $tieScore Record: $scoreCardPlayer - $scoreCardComp")
+               
+     
+    }
+     // added a game winner at 10 wins that returns all to zewro and adds a win record
+    fun winnerDeclare() {
+
+          if ( yourScore == 10 ) {
+
+
+              yourScore = 0
+              compScore = 0
+              tieScore = 0
+              scoreCardPlayer++
+
+          }
+              else if ( compScore == 10) {
+
+              yourScore = 0
+              compScore = 0
+              tieScore = 0
+              scoreCardComp++
+              
+
+          }
     }
 
     // the computers selection

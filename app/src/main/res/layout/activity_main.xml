@@ -54,7 +54,7 @@
         android:layout_height="272dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:orientation="vertical"
@@ -81,23 +81,23 @@
 
     <LinearLayout
         android:id="@+id/ImageResult"
-        android:layout_width="75dp"
-        android:layout_height="150dp"
+        android:layout_width="56dp"
+        android:layout_height="133dp"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintHorizontal_bias="0.72"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998">
+        app:layout_constraintVertical_bias="0.35000002">
 
         <ImageView
             android:id="@+id/imageViewResult"
             android:layout_width="match_parent"
-            android:layout_height="127dp"
+            android:layout_height="match_parent"
             android:contentDescription="TODO" />
 
 
@@ -108,14 +108,15 @@
         android:id="@+id/buttonReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:text="Reset Scores"
-        app:layout_constraintBottom_toTopOf="@+id/button_paper"
+        android:background="#4FFFFFFF"
+        android:text="RESET"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_scissors"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearGroup"
-        app:layout_constraintVertical_bias="0.81" />
+        app:layout_constraintTop_toBottomOf="@+id/ImageResult"
+        app:layout_constraintVertical_bias="0.65999997" />
 
     <TextView
         android:id="@+id/scoreTextView"
@@ -125,8 +126,8 @@
         android:layout_marginBottom="16dp"
         android:text="Scores: You: 0  Computer: 0 Ties: 0 #Games: 0"
         android:textColor="#003796"
-        android:textSize="16sp"
-        app:fontFamily="sans-serif-condensed-medium"
+        android:textSize="20sp"
+        app:fontFamily="sans-serif-condensed"
         app:layout_constraintBottom_toTopOf="@+id/button_paper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -134,51 +135,85 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonReset"
         app:layout_constraintVertical_bias="0.68" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You"
-        android:textColor="#673AB7"
-        android:textSize="18sp"
-        app:fontFamily="sans-serif-condensed-medium"
-        app:layout_constraintBottom_toTopOf="@+id/textView18"
-        app:layout_constraintEnd_toStartOf="@+id/linearGroup"
-        app:layout_constraintHorizontal_bias="0.79"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Computer"
-        android:textColor="#673AB7"
-        android:textSize="18sp"
-        app:fontFamily="sans-serif-condensed-medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="460dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="100dp"
+        android:background="#009688"
+        app:layout_constraintBottom_toTopOf="@+id/linearGroup"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ROCK, PAPER, SCISSORS"
-        android:textColor="#673AB7"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
+        android:textStyle="normal|bold"
         app:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintBottom_toTopOf="@+id/linearGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65999997" />
+        app:layout_constraintVertical_bias="0.18" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="none"
+        android:text="Races To 10"
+        android:textAllCaps="true"
+        android:textColor="#FFEB3B"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toTopOf="@+id/linearGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView20"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <LinearLayout
+        android:id="@+id/testGuide"
+        android:layout_width="65dp"
+        android:layout_height="259dp"
+        android:alwaysDrawnWithCache="false"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:gravity="center|left"
+            android:text="You"
+            android:textAllCaps="false"
+            android:textColor="#3F51B5"
+            android:textSize="18sp"
+            app:fontFamily="sans-serif-condensed-medium" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="Rival"
+            android:textColor="#3F51B5"
+            android:textSize="18sp"
+            app:fontFamily="sans-serif-condensed-medium" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
