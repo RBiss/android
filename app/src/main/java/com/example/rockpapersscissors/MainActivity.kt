@@ -44,7 +44,7 @@ class MainActivity: AppCompatActivity() {
         rpsScissorsButton.setOnClickListener { yourSelection(rpsScissorsButton) }
 
         buttonReset.setOnClickListener { resetScore(buttonReset) }
-
+        scoreTextView.findViewById<View>(gameStart())
 
         imageYou = findViewById(R.id.imageComp)
 
@@ -132,8 +132,7 @@ class MainActivity: AppCompatActivity() {
     }
 
     fun gameStart() {
-
-        println("Scores: You $yourScore  Computer $compScore Ties $tieScore Games Played $gamesPlayed")
+         scoreTextView.text = ("Scores - You: $yourScore  Computer: $compScore Ties: $tieScore #Games: $gamesPlayed")
     }
 
     //private fun scorecard(){
@@ -161,8 +160,9 @@ class MainActivity: AppCompatActivity() {
 
 }
 
+private fun <T> TextView.findViewById(gameStart: Unit) {
 
-
+}
 
 
 // private operator fun ImageView.invoke(button: Any) {

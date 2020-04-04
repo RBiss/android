@@ -50,74 +50,49 @@
 
     <LinearLayout
         android:id="@+id/linearGroup"
-        android:layout_width="174dp"
-        android:layout_height="396dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginRight="116dp"
+        android:layout_width="137dp"
+        android:layout_height="272dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView_yourChoice"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/you"
-            android:textColor="#E91E63"
-            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/imageComp"
-            android:layout_width="163dp"
-            android:layout_height="173dp"
-            android:contentDescription="@string/you" />
-
-        <TextView
-            android:id="@+id/textView_computerChoice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/computer"
-            android:textColor="#2196F3"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/scorecard"
-            style="@string/score"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAlignment="center"
-            android:visibility="gone"
-            android:gravity="center_horizontal" />
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:contentDescription="@string/you"
+            android:src="@drawable/ic_rpsrock" />
 
         <ImageView
             android:id="@+id/imageYou"
-            android:layout_width="169dp"
-            android:layout_height="173dp"
-            android:contentDescription="@string/todo" />
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_rpsrock" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ImageResult"
-        android:layout_width="91dp"
-        android:layout_height="177dp"
+        android:layout_width="75dp"
+        android:layout_height="150dp"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16000003">
+        app:layout_constraintVertical_bias="0.26999998">
 
         <ImageView
             android:id="@+id/imageViewResult"
@@ -129,14 +104,81 @@
     </LinearLayout>
 
 
-
     <Button
         android:id="@+id/buttonReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reset"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="556dp" />
+        android:layout_marginBottom="60dp"
+        android:text="Reset Scores"
+        app:layout_constraintBottom_toTopOf="@+id/button_paper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearGroup"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Scores: You: 0  Computer: 0 Ties: 0 #Games: 0"
+        android:textColor="#003796"
+        android:textSize="16sp"
+        app:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toTopOf="@+id/button_paper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReset"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You"
+        android:textColor="#673AB7"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toStartOf="@+id/linearGroup"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Computer"
+        android:textColor="#673AB7"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ROCK, PAPER, SCISSORS"
+        android:textColor="#673AB7"
+        android:textSize="30sp"
+        app:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toTopOf="@+id/linearGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65999997" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
