@@ -26,6 +26,7 @@ class MainActivity: AppCompatActivity() {
     var gamesPlayed: Int = 0
     var scoreCardPlayer: Int = 0
     var scoreCardComp: Int = 0
+    var scoreCardTie: Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +84,7 @@ class MainActivity: AppCompatActivity() {
         gamesPlayed = 0
         scoreCardComp = 0
         scoreCardPlayer = 0
+        scoreCardTie = 0
 
 
 
@@ -145,32 +147,39 @@ class MainActivity: AppCompatActivity() {
 
     fun gameStart() {
 
-
+                 winStatement.text = (" ")
                 scoreTextView.text =
-                    ("You: $yourScore  Rival: $compScore Ties: $tieScore Record: $scoreCardPlayer - $scoreCardComp")
+                    ("You: $yourScore  Rival: $compScore Ties: $tieScore Record: $scoreCardPlayer - $scoreCardComp - $scoreCardTie")
                
      
     }
      // added a game winner at 10 wins that returns all to zewro and adds a win record
     fun winnerDeclare() {
 
-          if ( yourScore == 10 ) {
+          if ( yourScore == 9 ) {
 
 
               yourScore = 0
               compScore = 0
               tieScore = 0
               scoreCardPlayer++
-
+                            winStatement.text = ("YOU WIN")
           }
-              else if ( compScore == 10) {
+              else if ( compScore == 9) {
 
               yourScore = 0
               compScore = 0
               tieScore = 0
               scoreCardComp++
-              
+                                winStatement.text = ("YOU LOSE")
 
+          }
+         else if   (tieScore == 9)  {
+              yourScore = 0
+              compScore = 0
+              tieScore = 0
+              scoreCardTie++
+              winStatement.text = ("YOU TIED")
           }
     }
 

@@ -167,7 +167,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ellipsize="none"
-        android:text="Races To 10"
+        android:text="Races To 9"
         android:textAllCaps="true"
         android:textColor="#FFEB3B"
         android:textSize="18sp"
@@ -214,6 +214,23 @@
             android:textSize="18sp"
             app:fontFamily="sans-serif-condensed-medium" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/winStatement"
+        android:layout_width="93dp"
+        android:layout_height="77dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textColor="#673AB7"
+        android:textSize="36sp"
+        android:visibility="visible"
+        app:fontFamily="@font/luckiest_guy"
+        app:layout_constraintBottom_toTopOf="@+id/buttonReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageResult"
+        app:layout_constraintVertical_bias="0.24000001" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
